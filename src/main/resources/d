@@ -1,0 +1,2 @@
+--INSERT INTO train (DEPART_STATION,DEPART_TIME,TYPE,CAPACITY,BOUND) VALUES ('Moynihan Train Hall at Penn Sta.','4:20','89 Palmetto',200,'One Way');
+--INSERT INTO train (DEPART_STATION,DEPART_TIME,TYPE,CAPACITY,BOUND) VALUES ('Moynihan Train Hall at Penn Sta.','4:20','89 Palmetto',200,'One Way');

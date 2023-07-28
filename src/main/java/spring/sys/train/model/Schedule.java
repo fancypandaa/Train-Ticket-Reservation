@@ -1,17 +1,29 @@
 package spring.sys.train.model;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Schedule {
-    private Date time;
-    private String Station;
-    @ManyToOne(cascade= CascadeType.ALL)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long Id;
+    private Date departed;
+    private Date arrived;
+//    private String station;
+    @ManyToOne
     private Train train;
+    public Schedule(){
+
+    }
+    public Schedule(Date departed, Date arrived) {
+        this.departed = departed;
+        this.arrived = arrived;
+    }
 }
