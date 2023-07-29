@@ -8,7 +8,7 @@ import spring.sys.train.commands.ScheduleCommand;
 import spring.sys.train.models.Schedule;
 @Component
 public class ScheduleToScheduleCommand implements Converter<Schedule, ScheduleCommand> {
-    
+
     @Override
     @Nullable
     @Synchronized
