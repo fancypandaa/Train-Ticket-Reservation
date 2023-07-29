@@ -17,6 +17,6 @@ public class TicketCommand {
     private Long price;
     private String Type;
     private Date date;
-    private User user;
-    private Train train;
+    private Long userId;
+    private Long trainId;
 }

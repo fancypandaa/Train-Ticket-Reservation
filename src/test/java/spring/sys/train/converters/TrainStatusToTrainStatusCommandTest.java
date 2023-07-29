@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class TrainStatusToTrainStatusCommandTest {
 
     public static final Long ID_VALUE = new Long(1L);
-
     public static final Date lastUpdate = new Date();
     public static final Long availableSeats = new Long(150L);
     public static final Departure departure = Departure.DELAY;
