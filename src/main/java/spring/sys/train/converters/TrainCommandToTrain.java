@@ -19,5 +19,6 @@ public class TrainCommandToTrain implements Converter<TrainCommand, Train> {
         }
         final Train train= new Train();
         train.setId(source.getId());
+        return train;
     }
 }
