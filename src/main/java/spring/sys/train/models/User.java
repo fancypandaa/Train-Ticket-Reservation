@@ -1,6 +1,5 @@
-package spring.sys.train.model;
+package spring.sys.train.models;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;

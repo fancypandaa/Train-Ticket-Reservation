@@ -4,8 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
-import spring.sys.train.model.*;
-import spring.sys.train.repository.*;
+import spring.sys.train.models.*;
+import spring.sys.train.repositories.*;
 
 import org.springframework.transaction.annotation.Transactional;
 import java.util.*;
