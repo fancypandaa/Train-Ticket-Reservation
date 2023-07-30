@@ -17,5 +17,5 @@ public class UserCommand {
     private String email;
     private String password;
     private String phone;
-    private Set<Ticket> tickets= new HashSet<>();
+    private Set<TicketCommand> tickets= new HashSet<>();
 }

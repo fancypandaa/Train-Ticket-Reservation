@@ -15,7 +15,8 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TrainCommandToTrainTest {
+class TrainToTrainCommandTest {
+
     public static final Long ID_VALUE = new Long(1L);
     public static final Long ID_VALUE_STATUS = new Long(2L);
     public static final Long ID_SCHEDULE = new Long(3L);
@@ -29,37 +30,36 @@ class TrainCommandToTrainTest {
     public static final Long CAPACITY = new Long(200L);
     public static final String TYPE= new String("Ger");
     public static final Date DATE = new Date();
-    TrainCommandToTrain converter;
+    TrainToTrainCommand converter;
     @BeforeEach
     void setUp() {
-        converter = new TrainCommandToTrain(new TrainStatusCommandToTrainStatus(),new ScheduleCommandToSchedule(),new TicketCommandToTicket());
+        converter = new TrainToTrainCommand(new TrainStatusToTrainStatusCommand(),new ScheduleToScheduleCommand(),new TicketToTicketCommand());
     }
 
     @Test
     void convert() {
-        TrainCommand trainCommand= new TrainCommand();
-        trainCommand.setId(ID_VALUE);
-        trainCommand.setType(TYPE);
-        trainCommand.setCapacity(CAPACITY);
-        trainCommand.setDestinationCity(DESTINATION_CITY);
-        trainCommand.setCurrentCity(CURRENT_CITY);
-        trainCommand.setArriveStation(ARRIVAL_STATION);
-        trainCommand.setDepartStation(DEPART_STATION);
-        TrainStatusCommand trainStatus=new TrainStatusCommand();
-        trainStatus.setStatusId(ID_VALUE_STATUS);
-        trainCommand.setTrainStatus(trainStatus);
-        ScheduleCommand schedule=new ScheduleCommand();
+        Train train = new Train();
+        train.setId(ID_VALUE);
+        train.setType(TYPE);
+        train.setCapacity(CAPACITY);
+        train.setDestinationCity(DESTINATION_CITY);
+        train.setCurrentCity(CURRENT_CITY);
+        train.setArriveStation(ARRIVAL_STATION);
+        train.setDepartStation(DEPART_STATION);
+        TrainStatus train1=new TrainStatus();
+        train1.setStatusId(ID_VALUE_STATUS);
+        train.setTrainStatus(train1);
+        Schedule schedule=new Schedule();
         schedule.setId(ID_SCHEDULE);
-        trainCommand.getSchedules().add(schedule);
-        TicketCommand ticket=new TicketCommand();
+        train.getSchedules().add(schedule);
+        Ticket ticket=new Ticket();
         ticket.setId(ID_TIC);
-        trainCommand.getTickets().add(ticket);
-        Train train1=converter.convert(trainCommand);
+        train.getTickets().add(ticket);
+        TrainCommand trainCommand=converter.convert(train);
         assertNotNull(train1);
-        assertEquals(ID_VALUE,train1.getId());
-        assertEquals(CAPACITY,train1.getCapacity());
-        assertEquals(ID_VALUE_STATUS,train1.getTrainStatus().getStatusId());
-        assertEquals(1,train1.getSchedules().size());
+        assertEquals(ID_VALUE,trainCommand.getId());
+        assertEquals(CAPACITY,trainCommand.getCapacity());
+        assertEquals(ID_VALUE_STATUS,trainCommand.getTrainStatus().getStatusId());
+        assertEquals(1,trainCommand.getSchedules().size());
     }
-
 }

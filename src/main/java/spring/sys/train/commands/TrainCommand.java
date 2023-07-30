@@ -21,7 +21,7 @@ public class TrainCommand {
     private Long capacity;
     private String currentCity;
     private String destinationCity;
-    private Set<Ticket> tickets= new HashSet<>();
-    private TrainStatus trainStatus;
-    private Set<Schedule> schedules=new HashSet<>();
+    private Set<TicketCommand> tickets= new HashSet<>();
+    private TrainStatusCommand trainStatus;
+    private Set<ScheduleCommand> schedules=new HashSet<>();
 }

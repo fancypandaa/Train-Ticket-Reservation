@@ -12,7 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class TicketToTicketCommandTest {
 
     public static final Long ID_VALUE = new Long(1L);
-
     public static final String STATUS = new String("paid");
     public static final Long PRICE = new Long(200L);
     public static final String TYPE= new String("Ger");
