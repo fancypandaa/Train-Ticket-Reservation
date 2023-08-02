@@ -3,8 +3,10 @@ package spring.sys.train.converters;
 import lombok.Synchronized;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
+import org.springframework.stereotype.Component;
 import spring.sys.train.commands.TrainCommand;
 import spring.sys.train.models.Train;
+@Component
 
 public class TrainToTrainCommand implements Converter<Train, TrainCommand> {
     private final TrainStatusToTrainStatusCommand trainStatusConverter;
