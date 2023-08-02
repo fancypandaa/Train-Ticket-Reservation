@@ -6,6 +6,8 @@ import java.util.*;
 public interface TicketService {
     Set<Ticket> listTickets();
     Ticket findTicketById(Long Id);
-    TicketCommand findTicketByUserId(Long userId);
+    TicketCommand findTicketByCommandId(Long Id);
+    Set<TicketCommand> findTicketByUserId(Long userId);
     TicketCommand createTicket(TicketCommand ticketCommand);
+    void cancelTicket(Long ticketId);
 }
