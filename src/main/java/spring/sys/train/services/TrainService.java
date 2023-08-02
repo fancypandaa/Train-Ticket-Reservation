@@ -5,8 +5,9 @@ import spring.sys.train.models.Train;
 import java.util.*;
 public interface TrainService {
     Set<Train> listTrains();
-    TrainCommand findTrainByCurrentCityAndDestinationCity(String currentCity,String destinationCity);
-    TrainCommand findTrainByDepartStation(String departStation);
-    TrainCommand findTrainByArrivalStation(String arriveStation);
+    Set<TrainCommand> findTrainByCurrentCityAndDestinationCity(String currentCity,String destinationCity);
+    Set<TrainCommand> findTrainByDepartStation(String departStation);
+    Set<TrainCommand> findTrainByArrivalStation(String arriveStation);
     Train findTrainById(Long Id);
+    TrainCommand findTrainByCommandId(Long Id);
 }
