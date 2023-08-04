@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Run Travel</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container-fluid" style="margin-top: 20px">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="pannel-group">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-md-3">
+                <h1 class="panel-title">Schedule Details!</h1>
+              </div>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-3">
+                <h5>Departed Time:</h5>
+              </div>
+              <div class="col-md-3">
+                <p th:text="${(schedule.departed)}">30 min</p>
+              </div>
+              <div class="col-md-3">
+                <h5>Arrival Time:</h5>
+              </div>
+              <div class="col-md-3">
+                <p th:text="${(schedule.arrived)}">30 min</p>
+              </div>
+            </div>
+
+
+
+            <div class="row">
+              <div class="col-md-3">
+                <h5>DepartStation:</h5>
+              </div>
+              <div class="col-md-3">
+                <p th:text="${schedule.getTrain().getDepartStation()}">Easy</p>
+              </div>
+
+              <div class="col-md-3">
+                <h5>ArriveStation:</h5>
+              </div>
+              <div class="col-md-3">
+                <p th:text="${schedule.getTrain().getArriveStation}">4</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <h5>Capacity:</h5>
+              </div>
+              <div class="col-md-3">
+                <p th:text="${schedule.getTrain().getCapacity}">30 min</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <h5>Current City:</h5>
+              </div>
+              <div class="col-md-3">
+                <p th:text="${schedule.getTrain().getCurrentCity}">30 min</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <h5>Destination City:</h5>
+              </div>
+              <div class="col-md-3">
+                <p th:text="${schedule.getTrain().getDestinationCity}">30 min</p>
+              </div>
+            </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

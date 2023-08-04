@@ -31,9 +31,9 @@ public class TrainBootstrap implements ApplicationListener<ContextRefreshedEvent
     @Transactional
     public void onApplicationEvent(ContextRefreshedEvent event) {
         log.debug("Loading Bootstrap Data");
-        trainRepository.saveAll(getTrains());
+//        trainRepository.saveAll(getTrains());
         ticketRepository.saveAll(getTickets());
-        userRepository.saveAll(getUsers());
+//        userRepository.saveAll(getUsers());
     }
     private List<Train> getTrains(){
         List<Train> trains= new ArrayList<>(2);
@@ -79,7 +79,7 @@ public class TrainBootstrap implements ApplicationListener<ContextRefreshedEvent
         ti.setPrice(120L);
         ti.setType("Business");
         ti.setDate(new Date());
-        Optional<Train> trainI = trainRepository.findById(1L);
+        Optional<Train> trainI = trainRepository.findById(31L);
         ti.setTrain(trainI.get());
 
         tickets.add(ti);
@@ -93,7 +93,7 @@ public class TrainBootstrap implements ApplicationListener<ContextRefreshedEvent
         user.setUserName("lol");
         user.setPhone("666-333-444");
         user.setPassword("3333444Q");
-        Optional<Ticket> ticket = ticketRepository.findById(1L);
+        Optional<Ticket> ticket = ticketRepository.findById(16L);
         user.addTickets(ticket.get());
 
         users.add(user);

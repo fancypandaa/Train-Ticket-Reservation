@@ -35,6 +35,7 @@ public class ScheduleServiceImp implements ScheduleService{
         Set<Schedule> schedules=new HashSet<>();
         scheduleRepository.findAll().iterator().forEachRemaining(schedules::add);
         return schedules;
+
     }
 
     @Override
@@ -43,6 +44,8 @@ public class ScheduleServiceImp implements ScheduleService{
         if(!scheduleOptional.isPresent()){
             log.error("Schedule Not Found. For ID value: " + Id.toString() );
         }
+        Schedule s= new Schedule();
+
         return scheduleOptional.get();
     }
     @Override
