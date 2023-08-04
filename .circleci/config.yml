@@ -30,8 +30,9 @@ jobs:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
 
-      - run: mvn integration-test cobertura:cobertura
-            # Then run your tests!
+      - run:
+          name: Test
+          command: mvn test
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
