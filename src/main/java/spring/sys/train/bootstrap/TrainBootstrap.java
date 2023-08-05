@@ -3,6 +3,7 @@ package spring.sys.train.bootstrap;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import spring.sys.train.models.*;
 import spring.sys.train.repositories.*;
@@ -17,13 +18,16 @@ public class TrainBootstrap implements ApplicationListener<ContextRefreshedEvent
     private final TrainStatusRepository trainStatusRepository;
     private final UserRepository userRepository;
     private final ScheduleRepository scheduleRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public TrainBootstrap(TrainRepository trainRepository, TicketRepository ticketRepository, TrainStatusRepository trainStatusRepository, UserRepository userRepository, ScheduleRepository scheduleRepository) {
+    public TrainBootstrap(TrainRepository trainRepository, TicketRepository ticketRepository, TrainStatusRepository trainStatusRepository, UserRepository userRepository,
+                          ScheduleRepository scheduleRepository,PasswordEncoder passwordEncoder) {
         this.trainRepository = trainRepository;
         this.ticketRepository = ticketRepository;
         this.trainStatusRepository = trainStatusRepository;
         this.userRepository = userRepository;
         this.scheduleRepository = scheduleRepository;
+        this.passwordEncoder=passwordEncoder;
     }
 
 
@@ -32,7 +36,7 @@ public class TrainBootstrap implements ApplicationListener<ContextRefreshedEvent
     public void onApplicationEvent(ContextRefreshedEvent event) {
         log.debug("Loading Bootstrap Data");
 //        trainRepository.saveAll(getTrains());
-        ticketRepository.saveAll(getTickets());
+//        ticketRepository.saveAll(getTickets());
 //        userRepository.saveAll(getUsers());
     }
     private List<Train> getTrains(){
@@ -92,9 +96,9 @@ public class TrainBootstrap implements ApplicationListener<ContextRefreshedEvent
         user.setEmail("lol@mail.com");
         user.setUserName("lol");
         user.setPhone("666-333-444");
-        user.setPassword("3333444Q");
-        Optional<Ticket> ticket = ticketRepository.findById(16L);
-        user.addTickets(ticket.get());
+        user.setPassword(passwordEncoder.encode("3333444Q"));
+//        Optional<Ticket> ticket = ticketRepository.findById(16L);
+//        user.addTickets(ticket.get());
 
         users.add(user);
         return users;

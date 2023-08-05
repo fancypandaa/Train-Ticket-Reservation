@@ -4,9 +4,10 @@ import lombok.Synchronized;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
 import spring.sys.train.commands.UserCommand;
 import spring.sys.train.models.User;
-
+@Component
 public class UserToUserCommand implements Converter<User, UserCommand> {
     private final TicketToTicketCommand ticketToTicketCommand;
     private final PasswordEncoder passwordEncoder;
