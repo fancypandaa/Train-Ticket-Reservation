@@ -1,4 +1,4 @@
-# Ticket Reservation System
+# Ticket Reservation System (Tilo)
 
 [![CircleCI](https://circleci.com/gh/fancypandaa/Train-Ticket-Reservation.svg?style=svg)](https://circleci.com/gh/fancypandaa/Train-Ticket-Reservation)
 
@@ -27,7 +27,7 @@ The frontend part blurs the project mechanism and main Features.
 
 License
 
-The ticket reservation system is licensed under the MIT License.
+Tilo is licensed under the MIT License.
 
 This is just a sample README, so you may need to customize it to fit your specific project. For example, you may want to add more details about the features of your system, or you may want to include screenshots or videos of the system in action. You can also use the README to provide instructions on how to install and use the system.
 
