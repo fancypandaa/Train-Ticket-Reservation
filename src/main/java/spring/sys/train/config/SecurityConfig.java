@@ -29,7 +29,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //web.ignoring().antMatchers("/resources/");
         web
                 .ignoring()
-                .antMatchers("/h2-console/**");
+                .antMatchers("/home")
+                .antMatchers("/schedules");
     }
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
@@ -37,6 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder());
     }
+
 //    @Override
 //    protected void configure(HttpSecurity http) throws Exception {
 ////        http.authorizeRequests()

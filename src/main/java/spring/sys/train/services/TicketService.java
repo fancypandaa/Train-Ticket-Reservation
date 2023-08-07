@@ -8,6 +8,7 @@ public interface TicketService {
     Ticket findTicketById(Long Id);
     TicketCommand findTicketByCommandId(Long Id);
     Set<TicketCommand> findTicketByUserId(Long userId);
+
     TicketCommand createTicket(TicketCommand ticketCommand);
     void cancelTicket(Long ticketId);
 }

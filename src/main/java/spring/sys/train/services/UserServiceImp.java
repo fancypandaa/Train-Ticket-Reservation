@@ -37,7 +37,17 @@ public class UserServiceImp implements UserService{
 
         return userCommand;
     }
+    @Override
+    @Transactional
+    public UserCommand findUserByEmail(String email) {
+        User user= userRepository.findByEmail(email);
+        if(user!=null){
+            log.error("User Not Found. For email value: " + email );
+        }
+        UserCommand userCommand= userToUserCommand.convert(user);
 
+        return userCommand;
+    }
     @Override
     @Transactional
     public UserCommand saveNewUser(UserCommand userCommand) {

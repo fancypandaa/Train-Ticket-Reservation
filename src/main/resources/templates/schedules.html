@@ -53,7 +53,7 @@
                 <td th:text="${schedule.departed}"></td>
                 <td th:text="${schedule.arrived}"></td>
 
-                <td><a href="#" th:href="@{'/schedule/' + ${schedule.id} + '/show'}">Book</a></td>
+                <td><a href="#" th:href="@{'/ticket/' + ${schedule.id} + '/show' + ${schedule.getTrain().getId()} }">Book</a></td>
                 <td><a href="#" th:href="@{'/schedule/' + ${schedule.id} + '/show'}">Details</a></td>
               </tr>
             </table>

@@ -19,7 +19,6 @@ public class Schedule {
     @ManyToOne
     private Train train;
     public Schedule(){
-
     }
     public Schedule(Date departed, Date arrived) {
         this.departed = departed;
