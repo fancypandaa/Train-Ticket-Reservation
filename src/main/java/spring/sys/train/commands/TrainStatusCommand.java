@@ -1,5 +1,6 @@
 package spring.sys.train.commands;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,9 +12,9 @@ import java.util.Date;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class TrainStatusCommand {
     private long statusId;
-    private Train train;
     private Date lastUpdate;
     private Long availableSeats;
     private Departure departure;

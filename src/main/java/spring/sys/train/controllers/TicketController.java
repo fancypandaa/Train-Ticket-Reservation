@@ -59,7 +59,8 @@ public class TicketController {
         else{
             price +=10;
         }
-        if(ticketCommand.getStatus() == "pre"){
+        if(ticketCommand.getStatus()
+                == "pre"){
             price -=5;
         }
         return  price;
