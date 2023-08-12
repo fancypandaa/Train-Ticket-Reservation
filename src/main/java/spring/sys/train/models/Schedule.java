@@ -15,7 +15,6 @@ public class Schedule {
     private Long Id;
     private Date departed;
     private Date arrived;
-//    private String station;
     @ManyToOne
     private Train train;
     public Schedule(){
