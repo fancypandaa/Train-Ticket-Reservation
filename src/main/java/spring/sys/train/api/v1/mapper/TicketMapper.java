@@ -9,5 +9,5 @@ import spring.sys.train.models.Ticket;
 public interface TicketMapper {
     TicketMapper INSTANCE = Mappers.getMapper(TicketMapper.class);
     TicketDTO ticketToTicketDTO(Ticket ticket);
-    Ticket TicketDTOToticket(TicketDTO ticketDTO);
+    Ticket ticketDTOToticket(TicketDTO ticketDTO);
 }

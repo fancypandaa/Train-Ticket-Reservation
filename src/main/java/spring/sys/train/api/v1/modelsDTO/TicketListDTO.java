@@ -8,5 +8,5 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 public class TicketListDTO {
-    Set<TrainDTO> trainDTOS;
+    Set<TicketDTO> ticketDTOS;
 }

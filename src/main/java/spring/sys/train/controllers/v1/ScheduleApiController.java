@@ -28,7 +28,7 @@ public class ScheduleApiController {
         return scheduleDTOService.findScheduleById(Id);
     }
     @GetMapping({"trainNo/{trainId}"})
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     public ScheduleListDTO getScheduleByTrainId(@PathVariable Long trainId) throws Exception {
         return new ScheduleListDTO(scheduleDTOService.findSchedulesByTrainId(trainId));
     }

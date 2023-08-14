@@ -1,9 +1,13 @@
 package spring.sys.train.api.v1.modelsDTO;
 
-import lombok.Data;
+import lombok.*;
 
 import java.util.Date;
 @Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class TicketDTO {
     private Long Id;
     private String status;

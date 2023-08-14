@@ -5,9 +5,10 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.*;
-@Entity
+
 @Getter
 @Setter
+@Entity
 public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
