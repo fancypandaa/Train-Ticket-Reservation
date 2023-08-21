@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Run Travel</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container-fluid" style="margin-top: 20px">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-md-3">
+              <h1 class="panel-title" th:text="${user}"></h1>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="table-responsive" th:if="${not #lists.isEmpty(tickets)}">
+            <table class="table table-hover ">
+              <thead class="thead-inverse">
+              <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Price</th>
+                <th>Type</th>
+                <th>Date</th>
+              </tr>
+              </thead>
+              <tr th:each="ticket : ${tickets}">
+                <td th:text="${ticket.id}">334</td>
+                <td th:text="${ticket.status}">Tasty Goodnees 3</td>
+                <td th:text="${ticket.price}">Tasty Goodnees 3</td>
+                <td th:text="${ticket.Type}">Tasty Goodnees 3</td>
+                <td th:text="${ticket.date}">Tasty Goodnees 3</td>
+
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

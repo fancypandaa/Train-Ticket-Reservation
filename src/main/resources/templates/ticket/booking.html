@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Run Travel</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid" style="margin-top: 20px">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <form  th:object="${ticket}"
+             th:action="@{'/ticket/' + ${schedule.getTrain().getId()}+'/'+${user} + '/book'} "
+             method="post">
+<!--        <input type="hidden" th:field="*{id}"/>-->
+        <div class="pannel-group">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h1 class="panel-title">Book Your Ticket</h1>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  From
+                </div>
+                <p th:text="${schedule.getTrain().getDepartStation()}">Easy</p>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  To
+                </div>
+                <p th:text="${schedule.getTrain().getArriveStation}">4</p>
+              </div>
+
+              <!--              <div class="row">-->
+                <div class="col-md-3 form-group">
+                  <label>Seat Type</label>
+              <select class="form-control" name="Type">
+                <option th:value="regular" th:selected="regular">Regular</option>
+                <option th:value="business"th:selected="business">Business</option>
+                <option th:value="super"th:selected="super">Super</option>
+              </select>
+            </div>
+              <div class="col-md-3 form-group">
+                <label>Payment Status</label>
+                <select class="form-control" name="status">
+                <option th:value="post" th:selected="post">PostPaid</option>
+                <option th:value="pre" th:selected="pre">PrePaid</option>
+                </select>
+              </div>
+            </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
